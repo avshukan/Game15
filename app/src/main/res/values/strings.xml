@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Game15</string>
+    <string name="N01">1</string>
+    <string name="N02">2</string>
+    <string name="N03">3</string>
+    <string name="N04">4</string>
+    <string name="N05">5</string>
+    <string name="N06">6</string>
+    <string name="N07">7</string>
+    <string name="N08">8</string>
+    <string name="N09">9</string>
+    <string name="N10">10</string>
+    <string name="N11">11</string>
+    <string name="N12">12</string>
+    <string name="N13">13</string>
+    <string name="N14">14</string>
+    <string name="N15">15</string>
+    <string name="N00"></string>
+    <string name="new_game">NEW GAME</string>
+    <string name="exit">EXIT</string>
 </resources>
