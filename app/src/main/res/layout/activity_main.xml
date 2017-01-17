@@ -7,6 +7,7 @@
     tools:context="com.avshukan.game15.MainActivity">
 
     <GridLayout
+        android:id="@+id/grid_id"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:rowCount="@integer/rowCount"
@@ -29,134 +30,6 @@
             android:onClick="onExitClick"
             android:layout_columnSpan="2" />
 
-        <Button
-            android:text="@string/N01"
-            android:id="@+id/buttonN01"
-            android:onClick="onButtonNClick"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_black"
-            android:layout_margin="@dimen/dpOne" />
-
-        <Button
-            android:text="@string/N02"
-            android:id="@+id/buttonN02"
-            android:onClick="onButtonNClick"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_black"
-            android:layout_margin="@dimen/dpOne" />
-
-        <Button
-            android:text="@string/N03"
-            android:id="@+id/buttonN03"
-            android:onClick="onButtonNClick"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_black"
-            android:layout_margin="@dimen/dpOne" />
-
-        <Button
-            android:text="@string/N04"
-            android:id="@+id/buttonN04"
-            android:onClick="onButtonNClick"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_black"
-            android:layout_margin="@dimen/dpOne" />
-
-        <Button
-            android:text="@string/N05"
-            android:id="@+id/buttonN05"
-            android:onClick="onButtonNClick"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_black"
-            android:layout_margin="@dimen/dpOne" />
-
-        <Button
-            android:text="@string/N06"
-            android:id="@+id/buttonN06"
-            android:onClick="onButtonNClick"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_black"
-            android:layout_margin="@dimen/dpOne" />
-
-        <Button
-            android:text="@string/N07"
-            android:id="@+id/buttonN07"
-            android:onClick="onButtonNClick"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_black"
-            android:layout_margin="@dimen/dpOne" />
-
-        <Button
-            android:text="@string/N08"
-            android:id="@+id/buttonN08"
-            android:onClick="onButtonNClick"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_black"
-            android:layout_margin="@dimen/dpOne" />
-
-        <Button
-            android:text="@string/N09"
-            android:id="@+id/buttonN09"
-            android:onClick="onButtonNClick"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_black"
-            android:layout_margin="@dimen/dpOne" />
-
-        <Button
-            android:text="@string/N10"
-            android:id="@+id/buttonN10"
-            android:onClick="onButtonNClick"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_black"
-            android:layout_margin="@dimen/dpOne" />
-
-        <Button
-            android:text="@string/N11"
-            android:id="@+id/buttonN11"
-            android:onClick="onButtonNClick"
-            android:textStyle="normal|bold"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_black"
-            android:layout_margin="@dimen/dpOne" />
-
-        <Button
-            android:text="@string/N12"
-            android:id="@+id/buttonN12"
-            android:onClick="onButtonNClick"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_black"
-            android:layout_margin="@dimen/dpOne" />
-
-        <Button
-            android:text="@string/N13"
-            android:id="@+id/buttonN13"
-            android:onClick="onButtonNClick"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_black"
-            android:layout_margin="@dimen/dpOne" />
-
-        <Button
-            android:text="@string/N14"
-            android:id="@+id/buttonN14"
-            android:onClick="onButtonNClick"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_black"
-            android:layout_margin="@dimen/dpOne" />
-
-        <Button
-            android:text="@string/N15"
-            android:id="@+id/buttonN15"
-            android:onClick="onButtonNClick"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_black"
-            android:layout_margin="@dimen/dpOne" />
-
-        <Button
-            android:text="@string/N00"
-            android:id="@+id/buttonN00"
-            android:onClick="onButtonNClick"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_black"
-            android:layout_margin="@dimen/dpOne" />
     </GridLayout>
 
 </RelativeLayout>

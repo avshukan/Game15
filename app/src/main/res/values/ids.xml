@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="grid_id" type="id">grid</item>
+    <item name="buttonN00" type="id">buttonN00</item>
+    <item name="buttonN01" type="id">buttonN01</item>
+    <item name="buttonN02" type="id">buttonN02</item>
+    <item name="buttonN03" type="id">buttonN03</item>
+    <item name="buttonN04" type="id">buttonN04</item>
+    <item name="buttonN05" type="id">buttonN05</item>
+    <item name="buttonN06" type="id">buttonN06</item>
+    <item name="buttonN07" type="id">buttonN07</item>
+    <item name="buttonN08" type="id">buttonN08</item>
+    <item name="buttonN09" type="id">buttonN09</item>
+    <item name="buttonN10" type="id">buttonN10</item>
+    <item name="buttonN11" type="id">buttonN11</item>
+    <item name="buttonN12" type="id">buttonN12</item>
+    <item name="buttonN13" type="id">buttonN13</item>
+    <item name="buttonN14" type="id">buttonN14</item>
+    <item name="buttonN15" type="id">buttonN15</item>
+</resources>

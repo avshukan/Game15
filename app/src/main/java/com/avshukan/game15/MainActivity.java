@@ -1,11 +1,17 @@
 package com.avshukan.game15;
 
+import android.content.Context;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.GridLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +24,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
+
+import static android.R.attr.id;
+import static android.R.attr.layout_height;
+import static android.R.attr.onClick;
+import static android.R.id.background;
+import static com.avshukan.game15.R.id.text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,127 +48,141 @@ public class MainActivity extends AppCompatActivity {
     private TextView tt;
 
     private void boardInit() {
+
+        GridLayout gridLayout = (GridLayout) findViewById(R.id.grid_id);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         for (int i = 0; i < 16; i++) {
             board[i] = new B();
+            Button button = new Button(this);
+//            android:text="@string/N01"
+//            android:id="@+id/buttonN01"
+//            android:onClick="onButtonNClick"
+//            android:layout_height="wrap_content"
+//            android:layout_margin="@dimen/dpOne" />
             switch (i) {
                 case 0:
-                    board[i].button = (Button) findViewById(R.id.buttonN00);
-                    board[i].topId = 12;
-                    board[i].bottomId = -1;
-                    board[i].leftId = 15;
-                    board[i].rightId = -1;
+                    button.setId(R.id.buttonN00);
+                    board[0].topId = 12;
+                    board[0].bottomId = -1;
+                    board[0].leftId = 15;
+                    board[0].rightId = -1;
                     break;
                 case 1:
-                    board[i].button = (Button) findViewById(R.id.buttonN01);
+                    button.setId(R.id.buttonN01);
                     board[i].topId = -1;
                     board[i].bottomId = 5;
                     board[i].leftId = -1;
                     board[i].rightId = 2;
                     break;
                 case 2:
-                    board[i].button = (Button) findViewById(R.id.buttonN02);
+                    button.setId(R.id.buttonN02);
                     board[i].topId = -1;
                     board[i].bottomId = 6;
                     board[i].leftId = 1;
                     board[i].rightId = 3;
                     break;
                 case 3:
-                    board[i].button = (Button) findViewById(R.id.buttonN03);
+                    button.setId(R.id.buttonN03);
                     board[i].topId = -1;
                     board[i].bottomId = 7;
                     board[i].leftId = 2;
                     board[i].rightId = 4;
                     break;
                 case 4:
-                    board[i].button = (Button) findViewById(R.id.buttonN04);
+                    button.setId(R.id.buttonN04);
                     board[i].topId = -1;
                     board[i].bottomId = 8;
                     board[i].leftId = 3;
                     board[i].rightId = -1;
                     break;
                 case 5:
-                    board[i].button = (Button) findViewById(R.id.buttonN05);
+                    button.setId(R.id.buttonN05);
                     board[i].topId = 1;
                     board[i].bottomId = 9;
                     board[i].leftId = -1;
                     board[i].rightId = 6;
                     break;
                 case 6:
-                    board[i].button = (Button) findViewById(R.id.buttonN06);
+                    button.setId(R.id.buttonN06);
                     board[i].topId = 2;
                     board[i].bottomId = 10;
                     board[i].leftId = 5;
                     board[i].rightId = 7;
                     break;
                 case 7:
-                    board[i].button = (Button) findViewById(R.id.buttonN07);
+                    button.setId(R.id.buttonN07);
                     board[i].topId = 3;
                     board[i].bottomId = 11;
                     board[i].leftId = 6;
                     board[i].rightId = 8;
                     break;
                 case 8:
-                    board[i].button = (Button) findViewById(R.id.buttonN08);
+                    button.setId(R.id.buttonN08);
                     board[i].topId = 4;
                     board[i].bottomId = 12;
                     board[i].leftId = 7;
                     board[i].rightId = -1;
                     break;
                 case 9:
-                    board[i].button = (Button) findViewById(R.id.buttonN09);
+                    button.setId(R.id.buttonN09);
                     board[i].topId = 5;
                     board[i].bottomId = 13;
                     board[i].leftId = -1;
                     board[i].rightId = 10;
                     break;
                 case 10:
-                    board[i].button = (Button) findViewById(R.id.buttonN10);
+                    button.setId(R.id.buttonN10);
                     board[i].topId = 6;
                     board[i].bottomId = 14;
                     board[i].leftId = 9;
                     board[i].rightId = 11;
                     break;
                 case 11:
-                    board[i].button = (Button) findViewById(R.id.buttonN11);
+                    button.setId(R.id.buttonN11);
                     board[i].topId = 7;
                     board[i].bottomId = 15;
                     board[i].leftId = 10;
                     board[i].rightId = 12;
                     break;
                 case 12:
-                    board[i].button = (Button) findViewById(R.id.buttonN12);
+                    button.setId(R.id.buttonN12);
                     board[i].topId = 8;
                     board[i].bottomId = 0;
                     board[i].leftId = 11;
                     board[i].rightId = -1;
                     break;
                 case 13:
-                    board[i].button = (Button) findViewById(R.id.buttonN13);
+                    button.setId(R.id.buttonN13);
                     board[i].topId = 9;
                     board[i].bottomId = -1;
                     board[i].leftId = -1;
                     board[i].rightId = 14;
                     break;
                 case 14:
-                    board[i].button = (Button) findViewById(R.id.buttonN14);
+                    button.setId(R.id.buttonN14);
                     board[i].topId = 10;
                     board[i].bottomId = -1;
                     board[i].leftId = 13;
                     board[i].rightId = 15;
                     break;
                 case 15:
-                    board[i].button = (Button) findViewById(R.id.buttonN15);
+                    button.setId(R.id.buttonN15);
                     board[i].topId = 11;
                     board[i].bottomId = -1;
                     board[i].leftId = 14;
                     board[i].rightId = 0;
                     break;
             }
+            button.setLayoutParams(layoutParams);
+            button.setBackgroundResource(R.drawable.button_black);
+            button.setOnClickListener(OCL);
+            gridLayout.addView(button, layoutParams);
+            board[i].button = button;
             board[i].setOriginN(i);
             board[i].setCurrentN(i);
         }
         emptyN = 0;
-        board[emptyN].erase();
+        //board[emptyN].erase();
     }
 
     @Override
@@ -166,9 +192,10 @@ public class MainActivity extends AppCompatActivity {
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+
         board = new B[16];
         boardInit();
-        mixing();
+        //mixing();
     }
 
     /**
@@ -293,29 +320,32 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void onButtonNClick(View view) {
-        int id = view.getId();
-        int N;
-        N = 0;
-        for (int i = 0; i < 16; i++) {
-            if (Integer.valueOf(id).equals(board[i].button.getId())) {
-                N = i;
-                break;
+    public OnClickListener OCL = new OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            int id = view.getId();
+            int N;
+            N = 0;
+            for (int i = 0; i < 16; i++) {
+                if (Integer.valueOf(id).equals(board[i].button.getId())) {
+                    N = i;
+                    break;
+                }
             }
-        }
 //        tt.setText(board[N].getOriginN() + " - " + board[N].getCurrentN());
-        board[N].move();
-        boolean checkWin = true;
-        for (int i = 0; i < 16; i++) {
-            if (board[i].getOriginN() != board[i].getCurrentN()) {
-                checkWin = false;
+            board[N].move();
+            boolean checkWin = true;
+            for (int i = 0; i < 16; i++) {
+                if (board[i].getOriginN() != board[i].getCurrentN()) {
+                    checkWin = false;
+                }
+            }
+            if (checkWin) {
+//            tt.setText("Win!");
+                showWin();
             }
         }
-        if (checkWin) {
-//            tt.setText("Win!");
-            showWin();
-        }
-    }
+    };
 
     public void showWin() {
         //создаем и отображаем текстовое уведомление
