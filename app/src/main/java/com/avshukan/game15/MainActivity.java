@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
         GridLayout gridLayout = (GridLayout) findViewById(R.id.grid_id);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         for (int i = 0; i < 16; i++) {
-            board[i] = new B();
             Button button = new Button(this);
 //            android:text="@string/N01"
 //            android:id="@+id/buttonN01"
@@ -61,128 +60,72 @@ public class MainActivity extends AppCompatActivity {
 //            android:layout_margin="@dimen/dpOne" />
             switch (i) {
                 case 0:
-                    button.setId(R.id.buttonN00);
-                    board[0].topId = 12;
-                    board[0].bottomId = -1;
-                    board[0].leftId = 15;
-                    board[0].rightId = -1;
+                    button.setId(R.id.buttonN01);
                     break;
                 case 1:
-                    button.setId(R.id.buttonN01);
-                    board[i].topId = -1;
-                    board[i].bottomId = 5;
-                    board[i].leftId = -1;
-                    board[i].rightId = 2;
+                    button.setId(R.id.buttonN02);
                     break;
                 case 2:
-                    button.setId(R.id.buttonN02);
-                    board[i].topId = -1;
-                    board[i].bottomId = 6;
-                    board[i].leftId = 1;
-                    board[i].rightId = 3;
+                    button.setId(R.id.buttonN03);
                     break;
                 case 3:
-                    button.setId(R.id.buttonN03);
-                    board[i].topId = -1;
-                    board[i].bottomId = 7;
-                    board[i].leftId = 2;
-                    board[i].rightId = 4;
+                    button.setId(R.id.buttonN04);
                     break;
                 case 4:
-                    button.setId(R.id.buttonN04);
-                    board[i].topId = -1;
-                    board[i].bottomId = 8;
-                    board[i].leftId = 3;
-                    board[i].rightId = -1;
+                    button.setId(R.id.buttonN05);
                     break;
                 case 5:
-                    button.setId(R.id.buttonN05);
-                    board[i].topId = 1;
-                    board[i].bottomId = 9;
-                    board[i].leftId = -1;
-                    board[i].rightId = 6;
+                    button.setId(R.id.buttonN06);
                     break;
                 case 6:
-                    button.setId(R.id.buttonN06);
-                    board[i].topId = 2;
-                    board[i].bottomId = 10;
-                    board[i].leftId = 5;
-                    board[i].rightId = 7;
+                    button.setId(R.id.buttonN07);
                     break;
                 case 7:
-                    button.setId(R.id.buttonN07);
-                    board[i].topId = 3;
-                    board[i].bottomId = 11;
-                    board[i].leftId = 6;
-                    board[i].rightId = 8;
+                    button.setId(R.id.buttonN08);
                     break;
                 case 8:
-                    button.setId(R.id.buttonN08);
-                    board[i].topId = 4;
-                    board[i].bottomId = 12;
-                    board[i].leftId = 7;
-                    board[i].rightId = -1;
+                    button.setId(R.id.buttonN09);
                     break;
                 case 9:
-                    button.setId(R.id.buttonN09);
-                    board[i].topId = 5;
-                    board[i].bottomId = 13;
-                    board[i].leftId = -1;
-                    board[i].rightId = 10;
+                    button.setId(R.id.buttonN10);
                     break;
                 case 10:
-                    button.setId(R.id.buttonN10);
-                    board[i].topId = 6;
-                    board[i].bottomId = 14;
-                    board[i].leftId = 9;
-                    board[i].rightId = 11;
+                    button.setId(R.id.buttonN11);
                     break;
                 case 11:
-                    button.setId(R.id.buttonN11);
-                    board[i].topId = 7;
-                    board[i].bottomId = 15;
-                    board[i].leftId = 10;
-                    board[i].rightId = 12;
+                    button.setId(R.id.buttonN12);
                     break;
                 case 12:
-                    button.setId(R.id.buttonN12);
-                    board[i].topId = 8;
-                    board[i].bottomId = 0;
-                    board[i].leftId = 11;
-                    board[i].rightId = -1;
+                    button.setId(R.id.buttonN13);
                     break;
                 case 13:
-                    button.setId(R.id.buttonN13);
-                    board[i].topId = 9;
-                    board[i].bottomId = -1;
-                    board[i].leftId = -1;
-                    board[i].rightId = 14;
+                    button.setId(R.id.buttonN14);
                     break;
                 case 14:
-                    button.setId(R.id.buttonN14);
-                    board[i].topId = 10;
-                    board[i].bottomId = -1;
-                    board[i].leftId = 13;
-                    board[i].rightId = 15;
+                    button.setId(R.id.buttonN15);
                     break;
                 case 15:
-                    button.setId(R.id.buttonN15);
-                    board[i].topId = 11;
-                    board[i].bottomId = -1;
-                    board[i].leftId = 14;
-                    board[i].rightId = 0;
+                    button.setId(R.id.buttonN00);
                     break;
             }
             button.setLayoutParams(layoutParams);
             button.setBackgroundResource(R.drawable.button_black);
             button.setOnClickListener(OCL);
             gridLayout.addView(button, layoutParams);
+            board[i] = new B();
             board[i].button = button;
-            board[i].setOriginN(i);
-            board[i].setCurrentN(i);
+            board[i].topId = i - 4;
+            board[i].bottomId = i + 4;
+            board[i].leftId = i - 1;
+            board[i].rightId = i + 1;
+            if (i == 15) {
+                board[i].setOriginN(0);
+            } else {
+                board[i].setOriginN(i + 1);
+            }
         }
-        emptyN = 0;
-        //board[emptyN].erase();
+        emptyN = 15;
+        board[emptyN].erase();
     }
 
     @Override
@@ -195,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
 
         board = new B[16];
         boardInit();
-        //mixing();
+        mixing();
     }
 
     /**
@@ -247,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
             board[i].setCurrentN(board[i].getOriginN());
             board[i].button.setVisibility(board[i].button.VISIBLE);
         }
-        emptyN = 0;
+        emptyN = 15;
         board[emptyN].erase();
         int newCell = -1;
         int direction; // направление
@@ -255,37 +198,37 @@ public class MainActivity extends AppCompatActivity {
             direction = 0;
             switch (emptyN) {
                 // угловые кнопки (2 варианта направлений)
-                case 1:
+                case 0:
                     direction = 2 * (new Random().nextInt(2)) + 1;
                     break;
-                case 4:
+                case 3:
                     direction = (new Random().nextInt(2)) + 1;
                     break;
-                case 13:
+                case 12:
                     direction = 3 * (new Random().nextInt(2));
                     break;
-                case 0:
+                case 15:
                     direction = 2 * (new Random().nextInt(2));
                     break;
                 // боковые кнопки (3 варианта направлений)
+                case 1:
                 case 2:
-                case 3:
                     direction = (new Random().nextInt(3)) + 1;
                     break;
-                case 5:
-                case 9:
+                case 4:
+                case 8:
                     direction = (new Random().nextInt(3));
                     if (direction == 2) {
                         direction = 3;
                     }
                     ;
                     break;
-                case 8:
-                case 12:
+                case 7:
+                case 11:
                     direction = (new Random().nextInt(3));
                     break;
+                case 13:
                 case 14:
-                case 15:
                     direction = (new Random().nextInt(3));
                     if (direction == 1) {
                         direction = 3;
@@ -293,10 +236,10 @@ public class MainActivity extends AppCompatActivity {
                     ;
                     break;
 // центральные клетки (4 варианта направлений)
+                case 5:
                 case 6:
-                case 7:
+                case 9:
                 case 10:
-                case 11:
                     direction = (new Random().nextInt(4));
 
             }
@@ -367,7 +310,7 @@ public class MainActivity extends AppCompatActivity {
 
         void erase() {
             this.setCurrentN(0);
-            this.button.setText(getResources().getString(R.string.N00));
+//            this.button.setText(getResources().getString(R.string.N00));
             this.button.setVisibility(this.button.GONE);
             for (int i = 0; i < 16; i++) {
                 boolean checkMoveable = (this.topId == i || this.bottomId == i || this.leftId == i || this.rightId == i);
@@ -379,7 +322,11 @@ public class MainActivity extends AppCompatActivity {
             board[emptyN].setCurrentN(this.getCurrentN());
             board[emptyN].button.setVisibility(board[emptyN].button.VISIBLE);
             board[emptyN].button.setText(this.button.getText());
-            emptyN = this.getOriginN();
+            if (this.getOriginN() == 0) {
+                emptyN = 15;
+            } else {
+                emptyN = this.getOriginN() - 1;
+            }
             this.erase();
         }
 
@@ -458,6 +405,7 @@ public class MainActivity extends AppCompatActivity {
 
         void setOriginN(int originN) {
             this.originN = originN;
+            this.setCurrentN(originN);
         }
     }
 }
